@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="pokedex">
+    <div class="left-container">
+      <div class="left-container__top-section">
+        <div class="top-section__blue"></div>
+        <div class="top-section__small-buttons">
+          <div class="top-section__red"></div>
+          <div class="top-section__yellow"></div>
+          <div class="top-section__green"></div>
+        </div>
+      </div>
+      <div class="left-container__main-section-container">
+        <div class="left-container__main-section">
+          <div class="main-section__white">
+            <div class="main-section__black">
+              <div class="main-screen hide">
+                <div class="screen__header">
+                  <span class="poke-name">
+
+                  </span>
+                  <span class="poke-id">
+
+                  </span>
+                </div>
+                <div class="screen__image">
+                  <img src="" class="poke-front-image" alt="front">
+                  <img src="" class="poke-back-image" alt="back">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="left-container__controllers">
+            <div class="controllers__d-pad">
+              <div class="d-pad__cell top"></div>
+              <div class="d-pad__cell left"></div>
+              <div class="d-pad__cell middle"></div>
+              <div class="d-pad__cell right"></div>
+              <div class="d-pad__cell bottom"></div>
+            </div>
+            <div class="controllers__buttons">
+              <div class="buttons__button">B</div>
+              <div class="buttons__button">A</div>
+            </div>
+          </div>
+        </div>
+        <div class="left-container__right">
+          <div class="left-container__hinge"></div>
+          <div class="left-container__hinge"></div>
+        </div>
+      </div>
+    </div>
+    <div class="right-container">
+      <div class="right-container__black">
+        <div class="right-container__screen">
+          <%# Para mostrar cada uno de los pokemones en nuestro template, utilizando ejs podemos recorrer nuestra lista y asi procesar cada uno de los pokemones %> 
+          <%# asignamos un atributo llamado data-url para almacenar la url que trae los datos de nuestro pokemon especifico %> 
+          <% pokemonList.forEach((pokemon) => { %>
+            <div data-url="<%= pokemon.url %>" class="list-item"><%= pokemon.name %> </div>
+          <% }); %>
+        </div>
+      </div>
+      <%# una vez tengamos nuestras paginas listas solo debemos asignar la query en nuestra ruta %> 
+      <div class="right-container__buttons">
+        <a href="?page=<%= prevPage %>">
+          <div class="left-button">Prev</div>
+        </a>
+        <a  href="?page=<%= nextPage %>">
+          <div class="right-button">Next</div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/javascripts/app.js"></script>
+</body>
+
+</html>
