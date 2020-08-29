@@ -60,19 +60,17 @@
     <div class="right-container">
       <div class="right-container__black">
         <div class="right-container__screen">
-          <%# Para mostrar cada uno de los pokemones en nuestro template, utilizando ejs podemos recorrer nuestra lista y asi procesar cada uno de los pokemones %> 
-          <%# asignamos un atributo llamado data-url para almacenar la url que trae los datos de nuestro pokemon especifico %> 
-          <% pokemonList.forEach((pokemon) => { %>
-            <div data-url="<%= pokemon.url %>" class="list-item"><%= pokemon.name %> </div>
-          <% }); %>
+          <%# Para mostrar cada uno de los pokemones en nuestro template, utilizando ejs podemos recorrer nuestra lista y asi procesar cada uno de los pokemones %>
+          <%# asignamos un atributo llamado data-url para almacenar la url que trae los datos de nuestro pokemon especifico %>
+
         </div>
       </div>
-      <%# una vez tengamos nuestras paginas listas solo debemos asignar la query en nuestra ruta %> 
+      <%# una vez tengamos nuestras paginas listas solo debemos asignar la query en nuestra ruta %>
       <div class="right-container__buttons">
         <a href="?page=<%= prevPage %>">
           <div class="left-button">Prev</div>
         </a>
-        <a  href="?page=<%= nextPage %>">
+        <a href="?page=<%= nextPage %>">
           <div class="right-button">Next</div>
         </a>
       </div>
